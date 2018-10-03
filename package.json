@@ -1,0 +1,25 @@
+{
+  "name": "that-dads-chat-graphql",
+  "version": "1.0.0",
+  "description": "graphql backend dads chat for that dads app",
+  "engines": {
+    "node": "6.11.3"
+  },
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aid19801/that-dads-chat-graphql.git"
+  },
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.3",
+    "express-graphql": "^0.6.12",
+    "graphql": "^14.0.2",
+    "json-server": "^0.14.0",
+    "nodemon": "*"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
