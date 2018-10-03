@@ -30,14 +30,14 @@ const RootQuery = new GraphQLObjectType({
                 id: { type: GraphQLString }
             },
             resolve(parentValue, args) {
-                return axios.get('http://localhost:4001/' + args.id)
+                return axios.get('https://that-dads-chat-log.herokuapp.com/' + args.id)
                 .then(res => res.data)
             }
         },
         messages: {
             type: new GraphQLList(MessageType),
             resolve(parentValue, args) {
-                return axios.get('http://localhost:4001/')
+                return axios.get('https://that-dads-chat-log.herokuapp.com/')
                     .then(res => res.data)
             }
         }
@@ -55,7 +55,7 @@ const mutation = new GraphQLObjectType({
                 message: { type: new GraphQLNonNull(GraphQLString) },
             },
             resolve(parentValue, args) {
-                return axios.post('http://localhost:4001/', {
+                return axios.post('https://that-dads-chat-log.herokuapp.com/', {
                     userName: args.userName,
                     userId: args.userId,
                     message: args.message,
@@ -69,7 +69,7 @@ const mutation = new GraphQLObjectType({
                 id: { type: new GraphQLNonNull(GraphQLString) }
             },
             resolve(parentValue, args) {
-                return axios.delete('http://localhost:4001/' + args.id)
+                return axios.delete('https://that-dads-chat-log.herokuapp.com/' + args.id)
                     .then(res => res.data)
             }
         },
@@ -83,7 +83,7 @@ const mutation = new GraphQLObjectType({
             },
             resolve(parentValue, args) {
                 console.log('ARGS ID: ', args.id);
-                return axios.patch('http://localhost:4001/' + args.id, args)
+                return axios.patch('https://that-dads-chat-log.herokuapp.com/' + args.id, args)
                     .then(res => res.data)
             }
         },
